@@ -1,7 +1,6 @@
 from datetime import date
 import calendar
-
-
+from typing import Dict
 
 menu_options = {
     1: 'University',
@@ -18,15 +17,25 @@ menu_options_university = {
     5: 'Назад',
 }
 
-schedule_for_an_even_week = {  # Четная неделя
-    "Monday": "англ",
-    "Tuesday": "Испанский",
-    "Wednesday": "французкий",
-    "Thursday": "американский",
-    "Friday": "красный",
-    "Saturday": "зеленый",
-    "Sunday": "черный"
+schedule_for_an_even_week = {  # Четная неделя сегодня
+    "Monday": "Архитектура вычислительных систем Х2(Лекция)",
+    "Tuesday": "Деловые коммуникации(1 лекция, 1 практика)",
+    "Wednesday": "Интелектуальные системы и технологии Х2(Лекция)",
+    "Thursday": "Логика и методология науки Х2(Практика)",
+    "Friday": "WOW, u can chill!",
+    "Saturday": "Программная инженерия Х2(Лекция+практика)",
+    "Sunday": "WOW, u can chill!"
 }
+
+#schedule_for_an_even_week = {  # Четная неделя завтра
+#    "Monday": "англ",
+#    "Tuesday": "Испанский",
+#    "Wednesday": "французкий",
+#    "Thursday": "американский",
+#    "Friday": "красный",
+#    "Saturday": "зеленый",
+#    "Sunday": "черный"
+#}
 
 odd_week_schedule = {  # Нечетная неделя
     "Monday": "",
@@ -71,7 +80,7 @@ def option_university_1():  # Четная неделя сегодня
 
 def option_university_2():  # Четная неделя завтра
     print(schedule_for_an_even_week)
-#   print(y)
+    print(y)
     x = schedule_for_an_even_week.get(y)
     print(x)
 
@@ -84,7 +93,7 @@ def option_university_3():  # Нечетная неделя сегодня
 def option_university_4():  # Нечетная неделя завтра
     print(schedule_for_an_even_week)
 #   print(y)
-    x = schedule_for_an_even_week.get(y)
+    x = odd_week_schedule.get(y)
     print(x)
 ####################################################################
 
@@ -113,6 +122,7 @@ def university():
 #    print(x)
 
 def main():
+#    print(schedule_for_an_even_week)
     weekday()
     print_menu_options()
 
@@ -139,3 +149,4 @@ def main():
 #        print('Invalid option. Please enter a number between 1 and 4.')
 
 main()
+
